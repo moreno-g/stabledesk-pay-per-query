@@ -1,0 +1,37 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+# TypeScript
+*.tsbuildinfo
+node_modules/.tmp/
+
+# Editor
+.DS_Store
+*.swp
+*.swo
+
+# Logs
+*.log
+/tmp/
+
+# Local SQLite data and Arc Studio session logs
+data/
+*.db
+*.db-shm
+*.db-wal
+traces.jsonl
+console.jsonl

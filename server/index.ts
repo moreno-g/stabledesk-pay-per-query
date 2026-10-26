@@ -160,7 +160,8 @@ const PRICE_NATIVE = BigInt('10000000000000000'); // arc-studio-allow-onchain-li
 const STABLEDESK_API_KEY = process.env.STABLEDESK_API_KEY ?? '';
 const STABLEDESK_BASE = 'https://stabledesk.xyz';
 
-const PORT = Number(process.env.BACKEND_PORT ?? 3001);
+// Railway (and most hosts) inject PORT and route traffic to it; BACKEND_PORT is the Studio sandbox name.
+const PORT = Number(process.env.PORT ?? process.env.BACKEND_PORT ?? 3001);
 const QUERY_TTL_MS = 10 * 60 * 1000; // 10 minutes
 
 // Deployment block for full-history event scan

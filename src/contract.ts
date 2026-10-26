@@ -5,7 +5,9 @@
  * Network mode is driven by VITE_NETWORK (set to "mainnet" for production).
  * In mainnet mode the build fails at Vite startup if any required variable is missing.
  */
-import artifact from '../contracts/out/QueryPayments.sol/QueryPayments.json';
+// Committed copy of the ABI (forge inspect QueryPayments abi): contracts/out/ is a build
+// directory, ignored by git, so it does not exist on a host that builds from the repo.
+import abi from './abi/QueryPayments.json';
 import { requireChain } from '@/onchain-facts';
 
 const NETWORK = import.meta.env.VITE_NETWORK as string | undefined;
@@ -43,4 +45,4 @@ export const CONTRACT_ADDRESS: `0x${string}` = IS_MAINNET
 export const QUERY_PRICE_NATIVE = BigInt('10000000000000000');
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const CONTRACT_ABI = artifact.abi as any[];
+export const CONTRACT_ABI = abi as any[];
